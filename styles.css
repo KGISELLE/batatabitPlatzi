@@ -1,0 +1,33 @@
+/* 
+1. Posicionamiento --> static, absolute, relative, fixed
+2. Modelo de caja (Box model) --> margin, border, padding, content
+3. Tipografía --> tipos, tamaños de fuente, etc
+4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+5. Otros --> reglas CSS y más
+ */
+
+:root {
+  /* Colores */
+  --bitcoin-orange: #F7931A;
+  --soft-orange: #FFE9D5;
+  --secondary-blue: #1A9AF7;
+  --soft-blue: #E7F5FF;
+  --warm-black: #201E1C;
+  --black: #282623;
+  --grey: #BABABA;
+  --off-white: #FAF8F7;
+  --just-white: #fff;
+}
+
+/* Utilizamos el selector universal para resetar nuestros estilos iniciales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* utilizamos este selector html para hacer uso del rem */
+html {
+  font-size: 62.5%;
+  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+}

@@ -109,4 +109,69 @@
     </head>
     ```
 
-    ***Nota: Por buena práctica cuando tenemos mas de una fuente descargada de Google Fonts, es mejor agregarla a nuestro proyecto por medio de la etiqueta `<link>` en el archivo HTML y no usando el @import en el CSS.***
+    ***Nota: Por buena práctica cuando tenemos mas de una fuente descargada de Google Fonts, es mejor agregarla a nuestro proyecto por medio de la etiqueta `<link>` en el archivo HTML y NO usando el @import en el CSS.***
+
+15. En la [Clase 7: Estilos base](https://platzi.com/clases/2030-mobile-first/32304-estilos-base/), agregamos los estilos iniciales y las variables que nos ayudarán a realizar el proyecto.
+
+16. Creamos el archivo "styles.css", para comenzar a declarar nuestras variables de estilo, quedando así:
+    ```css
+    :root {
+        /* Colores */
+        --bitcoin-orange: #F7931A;
+        --soft-orange: #FFE9D5;
+        --secondary-blue: #1A9AF7;
+        --soft-blue: #E7F5FF;
+        --warm-black: #201E1C;
+        --black: #282623;
+        --grey: #BABABA;
+        --off-white: #FAF8F7;
+        --just-white: #fff;
+    }
+
+    /* Utilizamos el selector universal para resetar nuestros estilos iniciales */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    /* utilizamos este selector html para hacer uso del rem */
+    html {
+        font-size: 62.5%;
+        font-family: 'DM Sans', sans-serif;
+        font-family: 'Inter', sans-serif;
+    }
+    ```
+
+17. Para crear las variables de color, tomamos como referencia las variables que ya estan creadas en Figma y las replicamos en nuestro archivo "styles.css
+
+***Nota: Utilizar convenciones recomendas para organizar nuestras variables.***
+
+    1. Posicionamiento --> static, absolute, relative, fixed
+    2. Modelo de caja (Box model) --> margin, border, padding, content
+    3. Tipografía --> tipos, tamaños de fuente, etc
+    4. Estilos visuales --> box-shadow, border-radius, gradient, etc
+    5. Otros --> reglas CSS y más
+
+18. Despues utilizamos el selector universal para resetar nuestros estilos iniciales.
+
+19. y por último utilizamos el selector de la etiqueta html para hacer uso del rem en vez de pixeles cuando trabajamos fuentes.
+    ```html
+    Nota: Explicación regla font-size: 62.5%;
+    * 1 rem = 16px 
+    * 62.5% * 16px = 10px 
+    => 10px = 1 rem.
+
+    * Y con regla de 3 se halla el 62.5%
+    16px = 100%
+    10px = x
+    ```
+
+    >"Históricamente se ha dicho que para poder usar REM en CSS, debemos primero pasar el font size del selector HTML a 62.5%, de tal forma que nos resulte sencillo usar la medida REM asimilándolo con pixeles. Así por ejemplo, para conseguir una medida de 12px, deberíamos usar 1.2rem. 
+    
+    >Es algo bastante útil y sencillo, pero hace que el navegador tenga que dar vueltas innecesarias para calcular las medidas de los elementos e ignoremos las configuraciones de tamaño que el usuario tenga en su navegador y esto puede tener algunos efectos visuales indeseados, por eso, lo que propongo con esta herramienta es que usemos REM, sin la necesidad de cambiar el tamaño base de HTML manteniendo su ***medida estándar que originalmente es 16px***." -[@FranciscoAMK](https://franciscoamk.com/herramientas/rem/#:~:text=Hist%C3%B3ricamente%20se%20ha%20dicho%20que,12px%2C%20deber%C3%ADamos%20usar%201.2rem.)
+
+
+    >Siempre es mejor usar font-size: 62.5%. Lo que hace CSS es calcular el 62.5% del valor de font size que el navegador le indique (por defecto es 16). Es indispensable usar esto y no 10px ya que los píxeles son unidades absolutas y el % es relativo. Si usamos la medida relativa (62.5), cuando un usuario con problemas visuales aumente el tamaño de letra desde el navegador, la letra escalará de tamaño, en cambio si usamos píxeles la letra no escalará de tamaño ya que los píxeles son fijos (absolutos). -[ramirouffelmann](https://platzi.com/discusiones/2008-html-css/111887-al-hacer-el-truco-de-emfont-size-625em-625-16px-10px-si-la-etiqueta-html-tendra-ese-valor-10px-de-font-size-entonces/)
+
+
+20. Tambien dentro del selector de la etiqueta html, agregamos el estilo de las fuentes de google fonts.
