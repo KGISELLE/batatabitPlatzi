@@ -85,3 +85,18 @@
 9. Descargamos estas imagenes e iconos del diseño en Figma que nos entregan los diseñadores y las almacenamos en la carpeta📁 "assets", intentar en lo posible exportar las imagenes en figma en formato SVG para que nuestras imagenes no se pixelen en la interfaz.
 
 10. Importante cambiar los nombres de las imagenes y los iconos que vienen por defecto de Figma, porque el nombre de estos debe ser muy descriptivo en nuestro proyecto, sin dejar espacios en el nobre podemos remplazarlo por - o _ y que los nombres de los archivos esten todos en minuscula.
+
+11. En la [Clase 6: Fuentes de nuestro proyecto](https://platzi.com/clases/2030-mobile-first/32303-fuentes-de-nuestro-proyecto/), agregamos los tipos de fuentes que utilizaremos en el proyecto desde Google Fonts.
+
+12. Buscamos en el diseño de figma las fuentes sugeridas.
+
+    ***Nota: Por buena práctica en el diseño no podemos agregar más de dos tipos de fuentes, las fuentes son "DM Sans" e "Inter".***
+
+13. Las dos fuentes del diseño las buscamos en [Google Fonts](https://fonts.google.com/), agremos para la fuente "DM Sans" las fuentes con peso 400, 500 y 700, y para la fuente "Inter" las fuentes con peso 300, 500 y 700.
+
+14. Ahora vamos a pegar el link en nuestro archivo inicial "index.html" para agregarlas a nuestro proyecto. Copiamos el link dentro de la etiqueta `<head>`, despues de la etiqueta `<title>`.
+    ```html
+    
+    ```
+
+    ***Nota: Por buena práctica cuando tenemos mas de una fuente descargada de Google Fonts, es mejor agregarla a nuestro proyecto por medio de la etiqueta `<link>` en el archivo HTML y no usando el @import en el CSS.***
