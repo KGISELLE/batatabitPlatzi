@@ -17,6 +17,9 @@
   --grey: #BABABA;
   --off-white: #FAF8F7;
   --just-white: #fff;
+  --font-sm: 1.4rem;
+  --font-md: 1.8rem;
+  --font-lg: 2.4rem;
 }
 
 /* Utilizamos el selector universal para resetar nuestros estilos iniciales */
@@ -31,7 +34,7 @@ html {
   font-family: 'DM Sans', sans-serif;
   font-family: 'Inter', sans-serif;
 }
-
+/** Estilos header */
 header {
   position: relative;
   display: flex;
@@ -41,6 +44,7 @@ header {
   min-width: 320px;
   height: 334px;
   text-align: center;
+  background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
 }
 header img {
   width: 150px;
@@ -56,4 +60,87 @@ header img {
   margin-top: 40px;
   text-align: center;
   align-self: center;
+}
+.header--title-container h1 {
+  font-size: var(--font-lg);
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: var(--just-white);
+}
+.header--title-container p {
+  margin-top: 25px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: var(--soft-orange);
+}
+.header--title-container .header--button {
+  position: absolute;
+  left: calc(50% - 114px);
+  top: 270px;
+  display: block;
+  margin-top: 35px;
+  padding: 15px;
+  width: 229px;
+  height: 48px;
+  background-color: var(--off-white);
+  /* Sombra */
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-sm);
+  font-weight: bold;
+  line-height: 1.8rem;
+  text-decoration: none;
+  color: var(--warm-black);
+}
+.header--button span {
+  display: inline-block;
+  width: 13px;
+  height: 8px;
+  margin-left: 10px;
+  background-image: url("./assets/icons/dropdown-down.svg");
+}
+main {
+  width: 100%;
+  height: auto;
+  background-color: var(--off-white);
+}
+/** Estilos section exchange */
+.main--exchange-container {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.main--exchange-container-title {
+  width: 90%;
+  min-width: 288px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.main--exchange-container .backgroundImg {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-image: url("./assets/imgs/bitcoin.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main--exchange-container h2 {
+  margin-bottom: 30px;
+  font-size: var(--font-lg);
+  font-weight: bold;
+  line-height: 2.6rem;
+  color: var(--warm-black);
+}
+.main--exchange-container p {
+  margin-bottom: 30px;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  line-height: 1.8rem;
+  color: #757575;
 }

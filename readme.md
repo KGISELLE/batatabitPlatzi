@@ -128,6 +128,9 @@
         --grey: #BABABA;
         --off-white: #FAF8F7;
         --just-white: #fff;
+        --font-sm: 1.4rem;
+        --font-md: 1.8rem;
+        --font-lg: 2.4rem;
     }
 
     /* Utilizamos el selector universal para resetar nuestros estilos iniciales */
@@ -181,6 +184,8 @@
 
 ## Dia 2
 
+### Realizando el Header
+
 1. En la [Clase 8: Maquetación del header](https://platzi.com/clases/2030-mobile-first/32305-maquetacion-del-header/),comenzamos con  la estructura inicial del header.
     ```html
     <header>
@@ -212,10 +217,117 @@
     ```
 
 
-***Nota: El `<header>` al ser una etiqueta principal que solo usaremos una vez, es decir no la vamos a replicar en el proyecto, no necesita una clase.***
+    ***Nota: El `<header>` al ser una etiqueta principal que solo usaremos una vez, es decir no la vamos a replicar en el proyecto, no necesita una clase.***
 
-***Nota: En el caso de `<img>` podemos utilizar la especificidad de CSS para llamar esta etiqueta a través del header si no tenemos más img en el proyecto dentro de una etiqueta de header.***
+    ***Nota: En el caso de `<img>` podemos utilizar la especificidad de CSS para llamar esta etiqueta a través del header si no tenemos más img en el proyecto dentro de una etiqueta de header.***
 
-***Nota: En el caso de los `<div>` si tendremos que colocar una clase porque esta etiqueta es muy comun en la estructura del proyecto.***
+    ***Nota: En el caso de los `<div>` si tendremos que colocar una clase porque esta etiqueta es muy comun en la estructura del proyecto.***
 
-3. Una vez agregadas las clases a nuestros elementos html, vamos al archivo "style.css", pero sin olvidarnos de vincular esta hoja de estilos en nuestro html.
+    <br>
+
+3. En la [Clase 10: Uso de linear-gradient](https://platzi.com/clases/2030-mobile-first/32307-uso-de-linear-gradient//), una vez agregadas las clases a nuestros elementos html, vamos al archivo "style.css", pero sin olvidarnos de vincular esta hoja de estilos en nuestro html.
+    ```css
+    header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        min-width: 320px;
+        height: 334px;
+        text-align: center;
+        background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    }
+    header img {
+        width: 150px;
+        height: 24px;
+        margin-top: 60px;
+        align-self: center;
+    }
+    .header--title-container {
+        width: 90%;
+        min-width: 288px;
+        max-width: 900px;
+        height: 218px;
+        margin-top: 40px;
+        text-align: center;
+        align-self: center;
+    }
+    .header--title-container h1 {
+        font-size: var(--font-xl);
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--just-white);
+    }
+    .header--title-container p {
+        margin-top: 25px;
+        font-size: var(--font-sm);
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: var(--soft-orange);
+    }
+    ```
+
+4. En la [Clase 11: Uso de position para botón flotante](https://platzi.com/clases/2030-mobile-first/32308-uso-de-position-para-boton-flotante/), para finalizar el header vamos a darle estilos al botón flotante. En esta clase se aprendio a utilizar flex para posicionar de forma mas sencilla los elementos en un contenedor, box-shadow para darle sombra al botón para que se vea flotante, composition para posicionar ciertos elementos que esten en el layout
+
+    ***Nota: Recoremos que el position: absolute; toma como position: relative; a su padre directo, que en el caso es el header y le da el beneficio de poderse reposicionar en cualquier parte del header, a pesar de que existan más elementos en la sección del header.***
+
+## Section exchange dentro del main
+
+5. En la [Clase 12: Estructura base de la sección de intercambio](https://platzi.com/clases/2030-mobile-first/32309-estructura-base-de-la-seccion-de-intercambio/), comenzamos con la estructrura inicial en html.
+    ```html
+    <section class="main--exchange-container">
+        <div class="backgroundImg"></div>
+        <div class="main--exchange-container-title">
+            <h2>Visibilizamos todas las tasas de cambio.</h2>
+            <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.</p>
+        </div>
+        <section class="main--tables-container">
+            <div>
+
+            </div>
+        </section>
+    </section>
+    ```
+6. Seguimos con los estilos en el archivo "styles.css"
+    ```css
+    main {
+        width: 100%;
+        height: auto;
+        background-color: var(--off-white);
+    }
+    .main--exchange-container {
+        width: 100%;
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .main--exchange-container-title {
+        width: 90%;
+        min-width: 288px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    ```
+7. En la [Clase 13: Imagen de background](https://platzi.com/clases/2030-mobile-first/32310-imagen-de-background/), agregamos la imagen del bitcoin como background en CSS.
+    ```css
+    .main--exchange-container .backgroundImg {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        background-image: url("./assets/imgs/bitcoin.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    ```
+
+    ***Nota: Tener en cuenta que si no le damos propiedades de tamaño a nuestro `<div class="backgroundImg">` no se nos mostrará la imagen introducida en css con `background-image: url("./assets/imgs/bitcoin.svg");`.***
+
+    ***Nota: Para evitar que nuestra imagen se deforme al agrandar o achicar la pantalla existen buenas practicas para arreglar esto, que es utilizar `background-size: cover;` `background-position: center;` `background-repeat: no-repeat;`.***
+
+8. Ahora agregramos los estilos al texto que esta dentro de esta sección.
+    ```css
+    ```
