@@ -12,6 +12,8 @@
 
 ## Paso a paso desarrollo del proyecto🏃‍♀️📝🏃‍♀️
 
+## Dia 1
+
 1. Lo primero que se realizó fue abrir la carpeta del proyecto con el editor de código (Visual Studio Code) y crear el archivo "readme.md" para comenzar a documentar el proceso.
 
 2. Se creo la carpeta del proyecto en GitHub con el nombre de "batatabitPlatzi" para contar con el proyecto dentro de los repositorios de GitHub y asi ir subiendo los avances en este proyecto.
@@ -175,3 +177,45 @@
 
 
 20. Tambien dentro del selector de la etiqueta html, agregamos el estilo de las fuentes de google fonts.
+
+
+## Dia 2
+
+1. En la [Clase 8: Maquetación del header](https://platzi.com/clases/2030-mobile-first/32305-maquetacion-del-header/),comenzamos con  la estructura inicial del header.
+    ```html
+    <header>
+        <img src="./assets/imgs/logo.svg" alt="logo">
+        <div>
+            <h1>La próxima revolución en el intercambio de criptomonedas.</h1>
+            <p>Batatabit te ayuda a navegar entre los diferentes precios y tendencias.</p>
+            <a href="">Conoce Nuestros Planes <span>i</span></a>
+        </div>
+    </header>
+    ```
+
+2. En la [Clase 9: Implementando BEM](https://platzi.com/clases/2030-mobile-first/32306-implementando-bem/),comenzamos a generar las clases para nuestras etiquetas basados en la metodologia BEM. * Se aconseja repasar documentación acerca de la [metodologia BEM](https://en.bem.info/methodology/faq/#why-bem) para tener una guia de como nombrar nuestras clases.
+
+    ```
+    class="header--title-container"
+    class="bloqueprincipal--elemento"
+    ```
+
+    ```html
+    <header>
+        <img src="./assets/imgs/logo.svg" alt="logo">
+        <div class="header--title-container">
+            <h1>La próxima revolución en el intercambio de criptomonedas.</h1>
+            <p>Batatabit te ayuda a navegar entre los diferentes precios y tendencias.</p>
+            <a href="" class="header--button">Conoce Nuestros Planes <span>i</span></a>
+        </div>
+    </header>
+    ```
+
+
+***Nota: El `<header>` al ser una etiqueta principal que solo usaremos una vez, es decir no la vamos a replicar en el proyecto, no necesita una clase.***
+
+***Nota: En el caso de `<img>` podemos utilizar la especificidad de CSS para llamar esta etiqueta a través del header si no tenemos más img en el proyecto dentro de una etiqueta de header.***
+
+***Nota: En el caso de los `<div>` si tendremos que colocar una clase porque esta etiqueta es muy comun en la estructura del proyecto.***
+
+3. Una vez agregadas las clases a nuestros elementos html, vamos al archivo "style.css", pero sin olvidarnos de vincular esta hoja de estilos en nuestro html.
