@@ -562,3 +562,112 @@
 ## Sección beneficios
 
 5. En la [Clase 18: Estructura base de la sección de beneficios](https://platzi.com/clases/2030-mobile-first/32317-estructura-base-de-la-seccion-de-beneficios/), comenzamos la maquetación en html de la seccion de beneficios que va dentro del `<main>`.
+    ```html
+    <section class="main-product-detail">
+        <span class="product-detail--batata-logo"></span>
+        <div class="product-detail--title">
+            <h2>Creamos un producto sin comparación.</h2>
+            <p>Confiable y diseñado para su uso diario.</p>
+        </div>
+        <section class="product-cards--container">
+            <article class="product-datail--card">
+                <span class="clock"></span>
+                <p class="product--card-title">Tiempo real</p>
+                <p class="product--card-body">Nuestro API toma información minuto a minuto sobre las tasas que más determinan el comportamiento.</p>
+            </article>
+        </section>
+    </section>    
+    ```
+
+6. En la [Clase 19: Estilos de la sección de beneficios](https://platzi.com/clases/2030-mobile-first/32318-estilos-de-la-seccion-de-beneficios/), vamos a darle estilos al maquetado de la sección beneficios.
+    ```css
+    .main-product-detail {
+        position: relative;
+        width: 100%;
+        min-width: 320px;
+        height: auto;
+        padding: 20px 10px;
+        background-color: var(--warm-black);
+    }
+    .product-detail--batata-logo {
+        position: absolute;
+        width: 40px;
+        height: 25px;
+        top: -10px;
+        left: calc(50% - 20px);
+        background-image: url("./assets/icons/batata-icon.svg");
+    }
+    .product-detail--title {
+        width: 90%;
+        min-width: 288px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+    .product-detail--title h2 {
+        margin-bottom: 20px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--just-white);
+    }
+    .product-detail--title p {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: #808080;
+    }
+    ```
+
+    ***Nota: Hacemos uso de calc() en css para poder calcular el centro de nuestro espacio donde irá nuestra imagen de batata-icon, esto toma como refrencia tambien el width de nuestra imagen que es `width: 40px;`, siendo la mitad de la imagen 20px, de hay los valores de `left: calc(50% - 20px);`
+
+7. En la [Clase 20: Maquetando tarjetas de beneficios](https://platzi.com/clases/2030-mobile-first/32320-maquetando-tarjetas-de-beneficios/), ahora vamos a darle estilos a las tarjetas que van dentro de la sección beneficios para terminar esta vista.
+    ```css
+    .product-detail--card {
+        width: 90%;
+        min-width: 288px;
+        max-width: 400px;
+        height: auto;
+        margin: 15px auto;
+        padding: 15px;
+        background-color: var(--black);
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    }
+    .product-detail--card .icon-card {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 10px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .clock {
+        background-image: url("./assets/icons/clock.svg");
+    }
+    .eye {
+        background-image: url("./assets/icons/eye.svg");
+    }
+    .dollar {
+        background-image: url("./assets/icons/dollar-sign.svg");
+    }
+    .check {
+        background-image: url("./assets/icons/check-circle.svg");
+    }
+    .product--card-title {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.8rem;
+        color: var(--just-white);
+    }
+    .product--card-body {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: #808080;
+    }
+    ```
