@@ -272,7 +272,7 @@
 
     ***Nota: Recoremos que el position: absolute; toma como position: relative; a su padre directo, que en el caso es el header y le da el beneficio de poderse reposicionar en cualquier parte del header, a pesar de que existan más elementos en la sección del header.***
 
-## Section exchange dentro del main
+## Realizando Section exchange dentro del main
 
 5. En la [Clase 12: Estructura base de la sección de intercambio](https://platzi.com/clases/2030-mobile-first/32309-estructura-base-de-la-seccion-de-intercambio/), comenzamos con la estructrura inicial en html.
     ```html
@@ -330,4 +330,235 @@
 
 8. Ahora agregramos los estilos al texto que esta dentro de esta sección.
     ```css
+    /** Estilos section exchange */
+    .main--exchange-container {
+        width: 100%;
+        height: auto;
+        padding-top: 60px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .main--exchange-container-title {
+        width: 90%;
+        min-width: 288px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .main--exchange-container .backgroundImg {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        background-image: url("./assets/imgs/bitcoin.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .main--exchange-container h2 {
+        margin-bottom: 30px;
+        font-size: var(--font-lg);
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--warm-black);
+    }
+    .main--exchange-container p {
+        margin-bottom: 30px;
+        font-size: var(--font-sm);
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: #757575;
+    }
     ```
+
+## Dia 3
+
+## Seguimos con Section exchange dentro del main
+
+1. En la [Clase 14: Estructura de tabla de monedas](https://platzi.com/clases/2030-mobile-first/32311-estructura-de-tabla-de-monedas/), creamos la tabla donde se agregará la info sobre las monedas, las tablas se pueden trabajar con las etiquetas de tabla en HTML ó con grid en CSS, para este caso se trabjará con las etiquetas de tabla.
+    ```html
+    <section class="main--tables-container">
+        <div class="main-currency-table">
+            <p class="currency-table--title">Monedas</p>
+                <div class="currency-table--container">
+                    <table>
+                        <tr>
+                            <td class="table__top-left">Bitcoin</td>
+                            <td class="table__top-right table__right">$1.96 <span>i</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ethereum</td>
+                            <td class="table__right">$0.07 <span>i</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ripple</td>
+                            <td class="table__right">$2.15 <span>i</span></td>
+                        </tr>
+                        <tr>
+                            <td class="table__bottom-left">Stellar</td>
+                            <td class="table__bottom-right table__right">$4.96 <span>i</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <p><b>Actualizado:</b> 19 Julio 23:45</p>
+                </div>                                                   
+        </div>            
+    </section>                              
+    ```
+
+2. En la [Clase 15: Estilos base de tabla de monedas](https://platzi.com/clases/2030-mobile-first/32312-estilos-base-de-tabla-de-monedas/), le damos estilos a la table creada en la anterior clase.
+    ```css
+    .main-currency-table {
+        width: 70%;
+        min-width: 235px;
+        max-width: 500px;
+        height: 360px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+    }
+    .main-currency-table .currency-table--title {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bolder;
+        line-height: 2.3rem;
+        color: var(--bitcoin-orange);
+    }
+    .currency-table--container {
+        width: 90%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 0 auto;
+    }
+    .currency-table--container table {
+    width: 100%;
+    height: 100%;
+    }
+    .currency-table--container td {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.9rem;
+        color: var(--grey);
+        background-color: var(--just-white);
+    }
+    ```
+
+3. En la [Clase 16: Detallando estilos de tabla de monedas](https://platzi.com/clases/2030-mobile-first/32314-detallando-estilos-de-tabla-de-monedas/), en esta clase detallamos algunos estilos de la tabla que nos faltaban, dentro de los cuales añadimos el icono de la moneda cuando sube y baja.
+    ```css
+    .main-currency-table, .main-commissions-table {
+        width: 70%;
+        min-width: 235px;
+        max-width: 500px;
+        height: 360px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+    }
+    .main-currency-table .currency-table--title {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bolder;
+        line-height: 2.3rem;
+        color: var(--bitcoin-orange);
+    }
+    .currency-table--container, .commissions-table--container {
+        width: 90%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 0 auto;
+    }
+    .currency-table--container table, .commissions-table--container table {
+        width: 100%;
+        height: 100%;
+    }
+    .currency-table--container td, .commissions-table--container td {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.9rem;
+        color: var(--grey);
+        background-color: var(--just-white);
+    }
+
+    .currency-table--container .table__top-left, .commissions-table--container .table__top-left {
+        border-radius: 15px 0 0 0;
+    }
+    .currency-table--container .table__top-right, .commissions-table--container .table__top-right {
+        border-radius: 0 15px 0 0;
+    }
+    .currency-table--container .table__bottom-left, .commissions-table--container .table__bottom-left {
+        border-radius: 0 0 0 15px;
+    }
+    .currency-table--container .table__bottom-right, .commissions-table--container .table__bottom-right {
+        border-radius: 0 0 15px 0;
+    }
+    .currency-table--container .table__right,.commissions-table--container .table__right {
+        font-size: 1.4rem;
+        font-weight: normal;
+        line-height: 1.7rem;
+        color: #757575;
+    }
+    .currency-table--container .down {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        background-image: url("./assets/icons/trending-down.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .currency-table--container .up {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        background-image: url("./assets/icons/trending-up.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .main-commissions-table .commissions-table--title {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+        font-weight: bolder;
+        line-height: 2.3rem;
+        color: #1A9AF7;
+    }
+    ```
+
+4. En la [Clase 17: Finalizando estilos de tabla de monedas](https://platzi.com/clases/2030-mobile-first/32315-finalizando-estilos-de-tabla-de-monedas/), en esta clase finalizamos los estilos de la tabla de moneda.
+    ```css
+    .currency-table--date {
+        width: 190px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 8px;
+        background-color: var(--soft-orange);
+        border-radius: 8px;
+    }
+    .currency-table--date p, .commissions-table--date p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+        color: var(--warm-black);
+    }
+    .commissions-table--date {
+        width: 190px;
+        height: 30px;
+        margin: 0 auto;
+        margin-top: 15px;
+        padding: 8px;
+        background-color: #E7F5FF;
+        border-radius: 8px;
+    }
+    ```
+
+    ***Nota: Tener cuidado con la herencia de algunas propiedades que nos pueden afectar nuestros estilos (Conflicto de herencia), hay que identificarlos y darles solucion, el problema es que la especificidad de `.currency-table--date p` es igual a la especificidad de `.main-exchange-container p`, y lo unico para solucionarlo es agregarle a `.currency-table--date p` el grosor de la letra que estamos buscando, por lo que estos estilos fueron los ultimos en escribirse tienen predominancia sobre `.main-exchange-container p`.
+
+<br>
+
+## Sección beneficios
+
+5. En la [Clase 18: Estructura base de la sección de beneficios](https://platzi.com/clases/2030-mobile-first/32317-estructura-base-de-la-seccion-de-beneficios/), comenzamos la maquetación en html de la seccion de beneficios que va dentro del `<main>`.
