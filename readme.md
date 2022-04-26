@@ -621,7 +621,7 @@
     }
     ```
 
-    ***Nota: Hacemos uso de calc() en css para poder calcular el centro de nuestro espacio donde irá nuestra imagen de batata-icon, esto toma como refrencia tambien el width de nuestra imagen que es `width: 40px;`, siendo la mitad de la imagen 20px, de hay los valores de `left: calc(50% - 20px);`
+    ***Nota: Hacemos uso de calc() en css para poder calcular el centro de nuestro espacio donde irá nuestra imagen de batata-icon, esto toma como refrencia tambien el width de nuestra imagen que es `width: 40px;`, siendo la mitad de la imagen 20px, de hay los valores de `left: calc(50% - 20px);`***
 
 7. En la [Clase 20: Maquetando tarjetas de beneficios](https://platzi.com/clases/2030-mobile-first/32320-maquetando-tarjetas-de-beneficios/), ahora vamos a darle estilos a las tarjetas que van dentro de la sección beneficios para terminar esta vista.
     ```css
@@ -671,3 +671,217 @@
         color: #808080;
     }
     ```
+
+## Dia 4
+
+## Sección beneficios - Una anotación importante
+
+***Nota: si te encontraste con un problema de contenido de las tarjetas, que el contenido se desborda de la tarjeta esta es una forma de solucionarlo: Al colocarle el height de la tarjeta en px estamos limitando el tamaño de esta tarjeta y no se tiene enciuenta el contenido para arreglar esto hay que colocar en vez de height `min-height: 150Px`. 
+
+## Sección Comodín
+
+Lleva una sola imagen y un titulo
+
+1. En la [Clase 21: Maquetando sección comodín](https://platzi.com/clases/2030-mobile-first/32321-maquetando-seccion-comodin/), realizamos el maquetado en html y los estilos en CSS de loq ue llamamos seccion comodín que solo tiene una imagen y un titulo.
+    ```html
+    <section class="bitcoin-img-conatiner">
+        <h2>Conócelo hoy.</h2>
+    </section>
+    ```
+
+    ```css
+    .bitcoin-img-conatiner {
+        width: 100%;
+        min-width: 320px;
+        height: 50vh;
+        background-image: url("./assets/imgs/bitcoinbaby2x.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+    .bitcoin-img-conatiner h2 {
+        padding-top: 60px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--just-white);
+    }
+    ```
+
+## Sección Planes
+
+2. En la [Clase 22: Estructura de sección de planes](https://platzi.com/clases/2030-mobile-first/32322-estructura-de-seccion-de-planes/), realizamos la sección donde se muestra la info sobre los planes, en esta sección encontramos tres tarjetas con un slice.
+    ```html
+    <section id="plans" class="main-plans-container">
+        <div class="plans--title">
+            <h2>Escoge el plan que mejor se ajuste a ti.</h2>
+            <p>Cualquier plan te da acceso completo a nuestra plataforma.</p>
+        </div>
+        <section class="plans-container--slider">
+            <article class="plans-container--cards">
+                <p>Recomendado</p>
+                <div>
+                    <h3>Pago Anual</h3>
+                    <p><sup>$</sup> 99</p>
+                    <p>*Ahorras $129 comparado al plan mensual.</p>
+                    <button>Escoger este <span>i</span></button>
+                </div>
+            </article>
+        </section>        
+    </section>
+    ```
+
+    ***Nota: colocar `<section id="plans">` a la sección planes para poder vincularlo con el boton que realizamos al principio de conoce nuestros planes con la etiqueta anchor `<a href="#plans" class="header--button">Conoce Nuestros Planes <span></span></a>`.
+
+3. En la [Clase 23: Aplicando estilos a sección de planes](https://platzi.com/clases/2030-mobile-first/32323-aplicando-estilos-a-seccion-de-planes/), en esta clase aplicamos los estilos iniciales a la sección planes.
+    ```css
+    .main-plans-container {
+        width: 100%;
+        min-width: 320px;
+        padding-bottom: 70px;
+        text-align: center;
+    }
+    .plans--title {
+        width: 90%;
+        min-width: 288px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    .plans--title h2 {
+        padding-top: 50px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--warm-black);
+    }
+    .plans--title p {
+        padding-top: 30px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: #757575;
+    }
+    ```
+
+4. En la [Clase 24: Aplicando estilos a las tarjetas de la sección de planes](https://platzi.com/clases/2030-mobile-first/32324-aplicando-estilos-a-las-tarjetas-de-la-seccion-de-/), en esta clase aplicamos los estilos a las tarjetas de esta sección.
+    ```html
+    <section class="plans-container--slider">
+        <article class="plans-container--cards">
+            <p class="recommended">Recomendado</p>
+            <div class="plan-info-container">
+                <h3 class="plan-card--title">Pago Anual<h3>
+                <p class="plan-card--price"><sup>$</sup> 99</p>
+                <p class="plan-card--saving">*Ahorras $129 comparado al plan mensual.</p>
+                <button class="plan-card-ca">Escoger este <span>i</span></button>
+            </div>
+        </article>
+    </section>
+    ```
+
+    ```css
+    .plans-container--cards {
+        position: relative;
+        width: 70%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 50px auto 0;
+        padding: 0 15px;
+        background-color: var(--just-white);
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+        border-radius: 15px;
+    }
+    ```
+
+    ***Nota: `<button class="plan-card-ca">` ca es call to action.***
+
+5. En la [Clase 25: Detallando estilos en tarjetas de planes](https://platzi.com/clases/2030-mobile-first/32325-detallando-estilos-en-tarjetas-de-planes/), en esta clase aplicamos los estilos al contenido de las tarjetas de esta sección.
+    ```css
+    .plans-container--cards {
+        position: relative;
+        width: 70%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 50px auto 0;
+        padding: 0 15px;
+        background-color: var(--just-white);
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+        border-radius: 15px;
+    }
+    .recommended {
+        position: absolute;
+        width: 120px;
+        height: 31px;
+        top: -15px;
+        left: calc(50% - 60px);
+        padding: 6px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: var(--bitcoin-orange);
+        border-radius: 8px;
+        color: var(--just-white);
+    }
+    .plan-card--title {
+        padding-top: 30px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        color: var(--black);
+    }
+    .plan-card--price {
+        padding: 5px 0;
+        font-size: 5.2rem;
+        font-weight: bold;
+        line-height: 5.3rem;
+        color: var(--black);
+    }
+    .plan-card--price sup {
+        font-size: 1.2rem;
+        font-weight: 500;
+        vertical-align: 25px;
+    }
+    .plan-card--saving{
+        font-size: 1.2rem;
+        color: #757575;
+    }
+    ```
+
+6. En la [Clase 26: Aplicando estilos al botón de call to action](https://platzi.com/clases/2030-mobile-first/32326-aplicando-estilos-al-boton-de-call-to-action/), en esta clase aplicamos los estilos al button dentro de la card.
+    ```css
+    .plan-card-ca {
+        width: 150px;
+        height: 48px;
+        margin-top: 20px;
+        background-color: var(--off-white);
+        border: 2px solid var(--bitcoin-orange);
+        border-radius: 4px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.8rem;
+        color: var(--black);
+    }
+    .plan-card-ca span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-image: url("./assets/icons/arrow-right.svg");
+        vertical-align: text-bottom;
+    }
+    ```
+
+    ***Nota: La propiedad vertical-align de CSS especifica el alineado vertical de un elemento en línea o una celda de una tabla. `text-bottom` Alinea la parte inferior del elemento con la parte inferior de la fuente del elemento principal.***
+
+7. En la [Clase 27: Scroll horizontal con CSS](https://platzi.com/clases/2030-mobile-first/32327-scroll-horizontal-con-css/), en esta clase realizamos el slider para poder ver las siguientes tarjetas de forma horizontal.
+    ```css
+
+    ```
+
+    ***Nota: overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+    en cards
+  scroll-snap-align: center;
