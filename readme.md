@@ -910,3 +910,58 @@ Lleva una sola imagen y un titulo
     2. En elemento hijo (.plans-container--cards)
     - ***scroll-snap-align: center;*** La alineación central del área de ajuste de desplazamiento de este cuadro, dentro del puerto de ajuste del contenedor de desplazamiento, es una posición de ajuste en este eje, nos ajusta el elemento al centro.
 
+## Dia 5
+
+## Footer
+
+1. En la [Clase 28: Footer](https://platzi.com/clases/2030-mobile-first/32328-footer/), en esta clase comenzamos la maquetación del footer.
+
+
+2. antes de iniciar la maquetación del footer arreglamos el ancho de la tarjeta que parecia más ancha que el mockup.
+
+3. Comenzamos la maquetación del footer en HTML:
+    ```html <footer>
+    <footer>
+        <section class="left">
+            <ul>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Crunchbase</a></li>
+                <li><a href="#">Hackernews</a></li>
+            </ul>
+        </section>
+        <section class="right">
+            <img src="./assets/imgs/copyright-batata.svg" alt="logo de batatabit 2020" />
+        </section>
+    </footer>
+    ```
+4. Ahora aplicamos los estilos en CSS:
+    ```css
+    footer {
+        display: flex;
+        width: 100%;
+        min-width: 320px;
+        height: 150px;
+        background-color: var(--bitcoin-orange);
+    }
+    footer section {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .left ul {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.8rem;
+        list-style: none;
+    }
+    .left li {
+        margin: 10px 0;
+    }
+    .left a {
+        text-decoration: none;
+        color: var(--just-white);
+    }
+    ```
+
+5. 
