@@ -555,7 +555,7 @@
     }
     ```
 
-    ***Nota: Tener cuidado con la herencia de algunas propiedades que nos pueden afectar nuestros estilos (Conflicto de herencia), hay que identificarlos y darles solucion, el problema es que la especificidad de `.currency-table--date p` es igual a la especificidad de `.main-exchange-container p`, y lo unico para solucionarlo es agregarle a `.currency-table--date p` el grosor de la letra que estamos buscando, por lo que estos estilos fueron los ultimos en escribirse tienen predominancia sobre `.main-exchange-container p`.
+    ***Nota: Tener cuidado con la herencia de algunas propiedades que nos pueden afectar nuestros estilos (Conflicto de herencia), hay que identificarlos y darles solucion, el problema es que la especificidad de `.currency-table--date p` es igual a la especificidad de `.main-exchange-container p`, y lo unico para solucionarlo es agregarle a `.currency-table--date p` el grosor de la letra que estamos buscando, por lo que estos estilos fueron los ultimos en escribirse tienen predominancia sobre `.main-exchange-container p`.***
 
 <br>
 
@@ -676,7 +676,7 @@
 
 ## Sección beneficios - Una anotación importante
 
-***Nota: si te encontraste con un problema de contenido de las tarjetas, que el contenido se desborda de la tarjeta esta es una forma de solucionarlo: Al colocarle el height de la tarjeta en px estamos limitando el tamaño de esta tarjeta y no se tiene enciuenta el contenido para arreglar esto hay que colocar en vez de height `min-height: 150Px`. 
+***Nota: si te encontraste con un problema de contenido de las tarjetas, que el contenido se desborda de la tarjeta esta es una forma de solucionarlo: Al colocarle el height de la tarjeta en px estamos limitando el tamaño de esta tarjeta y no se tiene enciuenta el contenido para arreglar esto hay que colocar en vez de height `min-height: 150Px`.*** 
 
 ## Sección Comodín
 
@@ -732,7 +732,7 @@ Lleva una sola imagen y un titulo
     </section>
     ```
 
-    ***Nota: colocar `<section id="plans">` a la sección planes para poder vincularlo con el boton que realizamos al principio de conoce nuestros planes con la etiqueta anchor `<a href="#plans" class="header--button">Conoce Nuestros Planes <span></span></a>`.
+    ***Nota: colocar `<section id="plans">` a la sección planes para poder vincularlo con el boton que realizamos al principio de conoce nuestros planes con la etiqueta anchor `<a href="#plans" class="header--button">Conoce Nuestros Planes <span></span></a>`.***
 
 3. En la [Clase 23: Aplicando estilos a sección de planes](https://platzi.com/clases/2030-mobile-first/32323-aplicando-estilos-a-seccion-de-planes/), en esta clase aplicamos los estilos iniciales a la sección planes.
     ```css
@@ -964,4 +964,30 @@ Lleva una sola imagen y un titulo
     }
     ```
 
-5. 
+
+5. En la [Clase 29: Aplicando media queries](https://platzi.com/clases/2030-mobile-first/32329-aplicando-media-queries/), comenzamos a agregar los estilos por medio de media queries, que nos permitirán ver nuestro diseño en laptop y otros dispositivos.
+
+6. Creamos una carpeta "CSS" para allí agregar los archivos de los estilos segun el tamaño del dispositivo. Creamos el primer archivo "tablet.css".
+
+7. Ahora en nuestro archivo "index.html", agregamos las nuevas paginas de estilos por medio de `<link>`, posicionandolos despues del link que nos llama style.css.
+`<link rel="stylesheet" href="./css/tablet.css" media="(min-width: 930px)">`
+***Nota: Con la regla de min-width le estamos diciendo al navegador que descarge esos estilos de la hoja de estilos "tablet.css" tan pronto llegue a ese ancho de pantalla de 930px.***
+
+8. Comenzamos a trabajar los estilos en el archivo "tablet.css" para adaptar nuestros estilos a tamaño de tablet.
+    ```css
+    .main--tables-container {
+        display: flex;
+        width: 930px;
+        margin: 0 auto;
+    }
+    .product-cards--container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 930px;
+        margin: 0 auto;
+    }
+    ```
+
+    ***Nota: Siempre por buenas prácticas debemos comenzar un proyecto "mobile first" por que como podemos darnos cuenta, los estilos que tuvimos que añadir fueron muy pocos, en cambio cuando realizamos primero el diseño para desktop hay muchas más variables que no tuvimos en cuenta y así se ingrementan nuestros estilos.***
+
+5. Realizamos el scroll horizontal de la sección exchange para poder terminar hasta aquí el diseño mobile.
