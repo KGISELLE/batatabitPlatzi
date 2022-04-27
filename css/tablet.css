@@ -9,3 +9,21 @@
   width: 930px;
   margin: 0 auto;
 }
+
+/*? Estilos añadidos para sliders faltantes */
+.main--tables-container, .plans-container--slider {
+  overflow: hidden;
+}
+
+.right-icon-container, .left-icon-container {
+  display: none;
+}
+
+/*? Estilos añadidos para footer */
+footer .left {
+  width: 70%;
+}
+footer .left ul {
+  display: flex;
+  gap: 100px;
+}

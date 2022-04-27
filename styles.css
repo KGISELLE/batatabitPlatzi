@@ -147,11 +147,19 @@ main {
 }
 
 
-
+.main--tables-container {
+  display: flex;
+  gap: 50px;
+  overflow-x: scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
 .main-currency-table, .main-commissions-table {
-  width: 70%;
-  min-width: 235px;
-  max-width: 500px;
+  display: flex;
+  scroll-snap-align: center;
+  /* width: 70%; */
+  /* min-width: 235px; */
+  /* max-width: 500px; */
   height: 360px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
@@ -498,4 +506,18 @@ footer .left ul {
 .left a {
   text-decoration: none;
   color: var(--just-white);
+}
+
+/*? Estilos añadidos para sliders faltantes */
+.currency--table{
+  padding-left: 10px;
+}
+.commission--table {
+  padding-right: 20px;
+}
+.right-icon-container, .left-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 }

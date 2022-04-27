@@ -1007,4 +1007,136 @@ Lleva una sola imagen y un titulo
 
     ***Nota: Un puntaje mayor a 60% es bueno pero se puede mejorar, ademas no hay que obsesionarse con estos puntajes, hay cosas en cuanto a performance que influyen como la velocidad de nuestra conexion a internet.***
 
-5. Realizamos el scroll horizontal de la sección exchange para poder terminar hasta aquí el diseño mobile.
+4. Por último y para terminar el proyecto arreglaremos algunos estilos y crearemos scroll donde se necesita.
+
+5. Primero realizamos el scroll horizontal de la sección exchange, para esto decidí modificar en el html los contenedores de las tarjetas, quedando así:
+    ```html
+    <section class="main--tables-container">
+        <div class="main-currency-table">
+            <div id="currency--table" class="currency--table">
+                <p class="currency-table--title">Monedas</p>
+                <div class="currency-table--container">
+                    <table>
+                        <tr>
+                            <td class="table__top-left">Bitcoin</td>
+                            <td class="table__top-right table__right">$ 1.96 <span class="down"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Ethereum</td>
+                            <td class="table__right">$ 0.07 <span class="up"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Ripple</td>
+                            <td class="table__right">$ 2.15 <span class="down"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="table__bottom-left">Stellar</td>
+                            <td class="table__bottom-right table__right">$ 4.96 <span class="down"></span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="currency-table--date">
+                    <p><b>Actualizado:</b> 19 Julio 23:45</p>
+                </div>
+            </div>
+            <div class="right-icon-container">
+                <a href="#commission--table">
+                    <img src="./assets/icons/dropdown-right.svg" alt="drop right icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="main-commissions-table">
+            <div class="left-icon-container">
+                <a href="#currency--table">
+                    <img src="./assets/icons/dropdown-left.svg" alt="drop left icon">
+                </a>
+            </div>
+            <div id="commission--table" class="commission--table">
+                <p class="commissions-table--title">Comisiones</p>
+                <div class="commissions-table--container">
+                    <table>
+                        <tr>
+                            <td class="table__top-left">Bitrade</td>
+                             <td class="table__top-right table__right">$ 1.96</td>
+                        </tr>
+                        <tr>
+                            <td>Bitpreco</td>
+                            <td class="table__right">$ 13.07</td>
+                        </tr>
+                        <tr>
+                            <td>Novadax</td>
+                            <td class="table__right">$ 13.15</td>
+                        </tr>
+                        <tr>
+                            <td class="table__bottom-left">Coinext</td>
+                            <td class="table__bottom-right table__right">$ 14.96</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="commissions-table--date">
+                    <p><b>Actualizado:</b> 19 Julio 23:45</p>
+                </div>
+            </div>
+        </div>
+    </section>            
+    ```
+
+6. Ahora vamos a arreglar los estilo que se necesiten en el archivo "styles.css":
+    ```css
+    /* Estilos modificados para mejorar las vistas de los sliders */
+    .main--tables-container {
+        display: flex;
+        gap: 50px;
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+    }
+    .main-currency-table, .main-commissions-table {
+        display: flex;
+        scroll-snap-align: center;
+        /* width: 70%; */
+        /* min-width: 235px; */
+        /* max-width: 500px; */
+        height: 360px;
+        margin: 0 auto;
+        font-family: 'Inter', sans-serif;
+    }
+    /* Estilos añadidos para sliders faltantes */
+    .currency--table{
+        padding-left: 10px;
+    }
+    .commission--table {
+        padding-right: 20px;
+    }
+    .right-icon-container, .left-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+    }
+    ```
+
+7. Ahora realizaremos los arreglos en los estilos que se necesiten para que se vean bien en tablet y desktop, en el archivo "tablet.css":
+    ```css
+    /*? Estilos añadidos para sliders faltantes */
+    .main--tables-container, .plans-container--slider {
+        overflow: hidden;
+    }
+    .right-icon-container, .left-icon-container {
+    display: none;
+    }
+    /*? Estilos añadidos para footer */
+    footer .left {
+        width: 70%;
+    }
+    footer .left ul {
+        display: flex;
+        gap: 100px;
+    }
+    ```
+
+8. Despues de terminada toda la aplicación corremos nuevamente el test de "LightHouse":
+    - Performance: 75%
+    - Accessibility: 96%
+    - Best Pactice: 100%
