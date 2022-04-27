@@ -400,8 +400,6 @@ main {
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
 }
-
-
 .plans-container--cards {
   position: relative;
   scroll-snap-align: center;

@@ -877,11 +877,36 @@ Lleva una sola imagen y un titulo
 
 7. En la [Clase 27: Scroll horizontal con CSS](https://platzi.com/clases/2030-mobile-first/32327-scroll-horizontal-con-css/), en esta clase realizamos el slider para poder ver las siguientes tarjetas de forma horizontal.
     ```css
+    .plans-container--slider {
+        display: flex;
+        gap: 10px;
+        height: 316px;
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+    }
+    .plans-container--cards {
+        position: relative;
+        scroll-snap-align: center;
+        width: 70%;
+        min-width: 230px;
+        max-width: 300px;
+        height: 250px;
+        margin: 50px auto 0;
+        padding: 0 15px;
+        background-color: var(--just-white);
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+        border-radius: 15px;
+    }
 
     ```
 
-    ***Nota: overflow-x: scroll;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-    en cards
-  scroll-snap-align: center;
+    Nota: 
+    1. En elemento padre (.plans-container--slider)
+    - ***overflow-x: scroll;*** Establece lo que se muestra cuando el contenido desborda los bordes izquierdo y derecho de un elemento a nivel de bloque. Esto puede ser nada, una barra de desplazamiento o el contenido de desbordamiento.overflow-x.
+    - ***overscroll-behavior-x: contain;*** Establece el comportamiento del navegador cuando se alcanza el límite horizontal de un área de desplazamiento.
+    - ***scroll-snap-type: x proximity;*** Establece cuán estrictamente se aplican los puntos de ajuste en el contenedor de desplazamiento en caso de que haya uno. 
+    X = El contenedor de desplazamiento se ajusta a las posiciones de ajuste solo en su eje horizontal. Proximity = La ventana gráfica de este contenedor de desplazamiento puede descansar en un punto de ajuste si no se desplaza actualmente teniendo en cuenta los parámetros de desplazamiento del agente de usuario. Si se agrega, mueve, elimina o cambia el tamaño del contenido, el desplazamiento de desplazamiento se puede ajustar para mantener el descanso en ese punto de ajuste.
+    2. En elemento hijo (.plans-container--cards)
+    - ***scroll-snap-align: center;*** La alineación central del área de ajuste de desplazamiento de este cuadro, dentro del puerto de ajuste del contenedor de desplazamiento, es una posición de ajuste en este eje, nos ajusta el elemento al centro.
+
