@@ -990,4 +990,21 @@ Lleva una sola imagen y un titulo
 
     ***Nota: Siempre por buenas prácticas debemos comenzar un proyecto "mobile first" por que como podemos darnos cuenta, los estilos que tuvimos que añadir fueron muy pocos, en cambio cuando realizamos primero el diseño para desktop hay muchas más variables que no tuvimos en cuenta y así se ingrementan nuestros estilos.***
 
+## Medicion de Producto final - LightHouse
+
+1. En la [Clase 30: Análisis con Lighthouse](https://platzi.com/clases/2030-mobile-first/32330-analisis-con-lighthouse/), utilizamos la herramienta lightHouse para medir accesibilidad, buenas practicas, performance, progresive web app, y demas cosas que nos permiten ver que cosas podemos mejorar en nuestro producto.
+
+    ***Nota: Como desarrollador hay que medir lo que se hace, por que no se puede mejorar lo que no se mide.***
+
+2. Para encontrar lightHouse, vamos a nuestro navegador, abrimos la consola y en la flechita de siguiente en encontramos lightHouse, esta herramienta ya hace parte de las herramientas del navegador de google Chrome.
+
+3. Una vez adentro de "LightHouse" hay varias cosas que podemos medir:
+    - Performance: Es la velocidad, cuanto tiempo se tarda en renderizar el proyecto.
+    - Best practices
+    - Accessibility
+
+    Realizamos estas pruebas para mobile y para desktop.
+
+    ***Nota: Un puntaje mayor a 60% es bueno pero se puede mejorar, ademas no hay que obsesionarse con estos puntajes, hay cosas en cuanto a performance que influyen como la velocidad de nuestra conexion a internet.***
+
 5. Realizamos el scroll horizontal de la sección exchange para poder terminar hasta aquí el diseño mobile.
