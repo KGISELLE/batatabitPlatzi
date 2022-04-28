@@ -1137,11 +1137,13 @@ Lleva una sola imagen y un titulo
     ```
 
 8. Despues de terminada toda la aplicación corremos nuevamente el test de "LightHouse":
-    *Para Mobile
+
+    ***Para Mobile***
     - Performance: 75%
     - Accessibility: 96%
     - Best Pactice: 100%
-    *Para Desktop
+    
+    ***Para Desktop***
     - Performance: 99%
     - Accessibility: 96%
     - Best Pactice: 100%
